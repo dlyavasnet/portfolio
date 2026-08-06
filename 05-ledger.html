@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ledger — аналитика для финансовых команд</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0b0d10;
+    --panel:#12151a;
+    --mint:#5eead4;
+    --text:#e7ebee;
+    --dim:#7c8894;
+    --line:#1f242b;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:var(--bg);color:var(--text);font-family:'Space Grotesk',sans-serif;}
+  .mono{font-family:'JetBrains Mono',monospace;}
+  .wrap{max-width:1160px;margin:0 auto;padding:0 32px;}
+  a{color:inherit;text-decoration:none;}
+
+  header{
+    display:flex;justify-content:space-between;align-items:center;
+    padding:26px 32px;border-bottom:1px solid var(--line);
+  }
+  .logo{font-weight:700;font-size:17px;display:flex;align-items:center;gap:8px;}
+  .logo .dot{width:8px;height:8px;background:var(--mint);border-radius:50%;}
+  nav{display:flex;gap:30px;font-size:14px;color:var(--dim);}
+  .cta-btn{
+    background:var(--mint);color:#04211c;padding:10px 18px;border-radius:6px;
+    font-size:13px;font-weight:500;
+  }
+
+  .hero{padding:100px 32px 0;text-align:center;}
+  .badge{
+    display:inline-flex;align-items:center;gap:8px;
+    font-family:'JetBrains Mono';font-size:12px;color:var(--mint);
+    border:1px solid rgba(94,234,212,.3);padding:6px 14px;border-radius:20px;margin-bottom:34px;
+  }
+  h1{font-weight:700;font-size:clamp(38px,6vw,68px);line-height:1.06;max-width:820px;margin:0 auto;letter-spacing:-0.01em;}
+  h1 .g{color:var(--mint);}
+  .hero p{max-width:520px;margin:26px auto 0;font-size:16px;color:var(--dim);line-height:1.7;}
+  .hero-ctas{display:flex;gap:14px;justify-content:center;margin-top:38px;}
+  .btn-primary{background:var(--mint);color:#04211c;padding:13px 26px;border-radius:8px;font-weight:500;font-size:14px;}
+  .btn-ghost{border:1px solid var(--line);color:var(--text);padding:13px 26px;border-radius:8px;font-size:14px;}
+
+  .console{
+    max-width:920px;margin:70px auto 0;
+    background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;
+    box-shadow:0 40px 100px rgba(0,0,0,.5);
+  }
+  .console-bar{
+    display:flex;gap:6px;padding:14px 18px;border-bottom:1px solid var(--line);
+  }
+  .console-bar span{width:10px;height:10px;border-radius:50%;background:#2a3038;}
+  .console-body{padding:0;display:grid;grid-template-columns:200px 1fr;}
+  .console-nav{border-right:1px solid var(--line);padding:20px 0;}
+  .console-nav div{padding:11px 20px;font-size:13px;color:var(--dim);}
+  .console-nav div.active{color:var(--text);background:rgba(94,234,212,.06);border-right:2px solid var(--mint);}
+  .console-main{padding:28px;}
+  .metric-row{display:flex;gap:36px;margin-bottom:28px;flex-wrap:wrap;}
+  .metric b{display:block;font-size:26px;font-family:'JetBrains Mono';}
+  .metric .up{color:var(--mint);font-size:12px;}
+  .metric span.label{font-size:12px;color:var(--dim);}
+  .chart{width:100%;height:auto;}
+
+  section.features{padding:110px 0;}
+  .section-head{text-align:center;margin-bottom:60px;}
+  .section-head .tag{font-family:'JetBrains Mono';font-size:12px;color:var(--mint);margin-bottom:14px;}
+  .section-head h2{font-size:32px;font-weight:700;}
+  .feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);}
+  .feature{background:var(--bg);padding:36px 30px;}
+  .feature .num{font-family:'JetBrains Mono';font-size:12px;color:var(--mint);margin-bottom:16px;}
+  .feature h3{font-size:17px;margin-bottom:10px;font-weight:500;}
+  .feature p{font-size:14px;color:var(--dim);line-height:1.7;}
+
+  footer{border-top:1px solid var(--line);padding:40px 32px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;font-size:13px;color:var(--dim);}
+
+  @media(max-width:820px){
+    .console-body{grid-template-columns:1fr;}
+    .console-nav{display:none;}
+    .feature-grid{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo"><span class="dot"></span>ledger</div>
+  <nav>
+    <a href="#product">Продукт</a>
+    <a href="#features">Возможности</a>
+  </nav>
+  <a class="cta-btn" href="#">Начать бесплатно</a>
+</header>
+
+<section class="hero" id="product">
+  <div class="badge mono">● обновление 2.4 — потоковые данные</div>
+  <h1>Финансовая отчётность,<br>которая <span class="g">не отстаёт</span> от бизнеса</h1>
+  <p>Ledger собирает данные из биллинга, банка и CRM в одну модель — и обновляет её каждую минуту, а не раз в месяц на созвоне.</p>
+  <div class="hero-ctas">
+    <a class="btn-primary" href="#">Подключить данные</a>
+    <a class="btn-ghost" href="#">Смотреть демо</a>
+  </div>
+
+  <div class="console">
+    <div class="console-bar"><span></span><span></span><span></span></div>
+    <div class="console-body">
+      <div class="console-nav">
+        <div class="active">Обзор</div>
+        <div>Выручка</div>
+        <div>Отток</div>
+        <div>Когорты</div>
+        <div>Прогноз</div>
+      </div>
+      <div class="console-main">
+        <div class="metric-row">
+          <div class="metric"><b>₽4.82M</b><span class="up">▲ 12.4%</span><span class="label">MRR</span></div>
+          <div class="metric"><b>1 384</b><span class="up">▲ 3.1%</span><span class="label">активных клиентов</span></div>
+          <div class="metric"><b>2.1%</b><span class="up" style="color:#f0a;">▼ 0.4%</span><span class="label">отток / мес</span></div>
+        </div>
+        <svg class="chart" viewBox="0 0 800 180" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="g1" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#5eead4" stop-opacity="0.35"/>
+              <stop offset="100%" stop-color="#5eead4" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+          <polyline points="0,140 80,130 160,120 240,125 320,95 400,100 480,70 560,75 640,40 720,45 800,15" fill="none" stroke="#5eead4" stroke-width="2"/>
+          <polygon points="0,140 80,130 160,120 240,125 320,95 400,100 480,70 560,75 640,40 720,45 800,15 800,180 0,180" fill="url(#g1)"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="features" id="features">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="tag mono">// features</div>
+      <h2>Три вещи, которые Ledger делает лучше таблиц</h2>
+    </div>
+    <div class="feature-grid">
+      <div class="feature">
+        <div class="num mono">01</div>
+        <h3>Обновление в реальном времени</h3>
+        <p>Данные из Stripe, банка и CRM синхронизируются каждую минуту — без экспорта CSV.</p>
+      </div>
+      <div class="feature">
+        <div class="num mono">02</div>
+        <h3>Когорты без формул</h3>
+        <p>Разбивайте выручку по когортам, каналам и тарифам — без единой формулы Excel.</p>
+      </div>
+      <div class="feature">
+        <div class="num mono">03</div>
+        <h3>Прогноз на основе фактов</h3>
+        <p>Модель учится на реальном оттоке и сезонности, а не на линейной экстраполяции.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div>© Ledger, финансовая аналитика</div>
+  <div>hello@ledger.example · Документация · Статус системы</div>
+</footer>
+
+</body>
+</html>

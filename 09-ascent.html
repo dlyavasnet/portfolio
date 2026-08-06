@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ASCENT — скалодром</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --stone:#3d3a35;
+    --stone-dark:#26241f;
+    --chalk:#f2efe8;
+    --lime:#c6f24e;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:var(--stone-dark);color:var(--chalk);font-family:'Inter',sans-serif;}
+  .disp{font-family:'Archivo Black',sans-serif;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 32px;}
+
+  header{
+    display:flex;justify-content:space-between;align-items:center;
+    padding:26px 32px;
+  }
+  .logo{font-family:'Archivo Black',sans-serif;font-size:20px;letter-spacing:-0.01em;}
+  .logo span{color:var(--lime);}
+  nav{display:flex;gap:28px;font-size:14px;font-weight:500;opacity:.85;}
+  .cta-header{background:var(--lime);color:var(--stone-dark);padding:11px 20px;font-weight:700;font-size:13px;border-radius:4px;}
+
+  .hero{
+    position:relative;padding:60px 32px 0;
+  }
+  .hero-inner{
+    max-width:1180px;margin:0 auto;
+    display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;
+    min-height:74vh;
+  }
+  h1{
+    font-family:'Archivo Black',sans-serif;
+    font-size:clamp(42px,7vw,84px);line-height:.98;letter-spacing:-0.01em;
+  }
+  h1 .lime{color:var(--lime);}
+  .hero p{margin-top:24px;font-size:16px;line-height:1.7;color:rgba(242,239,232,.65);max-width:420px;}
+  .hero-ctas{display:flex;gap:14px;margin-top:34px;}
+  .btn-lime{background:var(--lime);color:var(--stone-dark);padding:15px 28px;font-weight:700;font-size:14px;border-radius:4px;}
+  .btn-line{border:2px solid rgba(242,239,232,.3);color:var(--chalk);padding:13px 26px;font-weight:700;font-size:14px;border-radius:4px;}
+
+  .wall{
+    position:relative;aspect-ratio:4/5;border-radius:8px;overflow:hidden;
+    background:
+      linear-gradient(165deg, #4a463f 0%, #26241f 100%);
+  }
+  .hold{position:absolute;border-radius:50%;box-shadow:0 4px 10px rgba(0,0,0,.4);}
+  .route-line{position:absolute;inset:0;}
+
+  .stat-strip{
+    display:flex;justify-content:space-between;
+    border-top:1px solid rgba(242,239,232,.14);
+    margin-top:70px;padding:36px 0;flex-wrap:wrap;gap:20px;
+  }
+  .stat-strip div{text-align:center;flex:1;min-width:120px;}
+  .stat-strip b{font-family:'Archivo Black';font-size:32px;display:block;color:var(--lime);}
+  .stat-strip span{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:rgba(242,239,232,.5);}
+
+  section.routes{padding:100px 0;}
+  .section-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:50px;flex-wrap:wrap;gap:16px;}
+  .section-head h2{font-family:'Archivo Black';font-size:36px;}
+  .section-head span{font-size:13px;color:rgba(242,239,232,.5);}
+
+  .route-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(242,239,232,.12);}
+  .route-card{background:var(--stone-dark);padding:34px 26px;}
+  .grade-tag{
+    display:inline-block;font-family:'Archivo Black';font-size:14px;padding:4px 10px;border-radius:4px;margin-bottom:20px;
+  }
+  .route-card h3{font-size:16px;font-weight:700;margin-bottom:8px;}
+  .route-card p{font-size:13px;color:rgba(242,239,232,.55);}
+
+  footer{padding:56px 32px;border-top:1px solid rgba(242,239,232,.14);display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;font-size:13px;color:rgba(242,239,232,.5);}
+
+  @media(max-width:900px){
+    .hero-inner{grid-template-columns:1fr;}
+    .wall{order:-1;aspect-ratio:16/10;}
+    .route-grid{grid-template-columns:repeat(2,1fr);}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">ASC<span>ENT</span></div>
+  <nav>
+    <a href="#routes">Трассы</a>
+    <a href="#gym">Зал</a>
+  </nav>
+  <a class="cta-header" href="#">Пробное занятие</a>
+</header>
+
+<section class="hero" id="gym">
+  <div class="hero-inner">
+    <div>
+      <h1>ГРАВИТАЦИЯ —<br>ЭТО <span class="lime">ПЕРЕГОВОРЫ</span></h1>
+      <p>Скалодром с 38 трассами от 4а до 8а, зоной болдеринга и тренерами уровня КМС. Первое занятие — бесплатно, вместе со снаряжением.</p>
+      <div class="hero-ctas">
+        <a class="btn-lime" href="#">Записаться</a>
+        <a class="btn-line" href="#routes">Все трассы</a>
+      </div>
+    </div>
+    <div class="wall">
+      <svg width="100%" height="100%" viewBox="0 0 400 500" class="route-line">
+        <path d="M 60 460 L 130 400 L 90 320 L 200 260 L 160 180 L 280 120 L 240 50" stroke="#c6f24e" stroke-width="2" fill="none" stroke-dasharray="4 6" opacity="0.8"/>
+      </svg>
+      <div class="hold" style="width:34px;height:34px;background:#c6f24e;top:390px;left:44px;"></div>
+      <div class="hold" style="width:26px;height:26px;background:#e8546a;top:330px;left:118px;"></div>
+      <div class="hold" style="width:30px;height:30px;background:#f2efe8;top:250px;left:78px;"></div>
+      <div class="hold" style="width:28px;height:28px;background:#c6f24e;top:190px;left:188px;"></div>
+      <div class="hold" style="width:24px;height:24px;background:#e8546a;top:110px;left:148px;"></div>
+      <div class="hold" style="width:32px;height:32px;background:#f2efe8;top:38px;left:266px;"></div>
+    </div>
+  </div>
+  <div class="stat-strip">
+    <div><b>38</b><span>трасс</span></div>
+    <div><b>14м</b><span>высота стены</span></div>
+    <div><b>6</b><span>тренеров</span></div>
+    <div><b>07:00–23:00</span></div>
+  </div>
+</section>
+
+<section class="routes" id="routes">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Сегодняшние трассы</h2>
+      <span>обновлено вчера</span>
+    </div>
+    <div class="route-grid">
+      <div class="route-card">
+        <span class="grade-tag" style="background:#c6f24e;color:#26241f;">5c</span>
+        <h3>«Жёлтый карниз»</h3>
+        <p>Нависание, силовой старт, техничный выход на полку.</p>
+      </div>
+      <div class="route-card">
+        <span class="grade-tag" style="background:#e8546a;color:#fff;">7a</span>
+        <h3>«Стеклянный потолок»</h3>
+        <p>Динамика через два зацепа, требует точного тайминга.</p>
+      </div>
+      <div class="route-card">
+        <span class="grade-tag" style="background:#f2efe8;color:#26241f;">4b</span>
+        <h3>«Первый шаг»</h3>
+        <p>Вертикаль, крупные зацепы, трасса для новичков.</p>
+      </div>
+      <div class="route-card">
+        <span class="grade-tag" style="background:#c6f24e;color:#26241f;">6b</span>
+        <h3>«Сухой лист»</h3>
+        <p>Слэб, работа на трении, минимум зацепов для рук.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div>ASCENT · пр. Скалолазов, 22</div>
+  <div>hello@ascent-gym.example · +7 900 000-00-00</div>
+</footer>
+
+</body>
+</html>

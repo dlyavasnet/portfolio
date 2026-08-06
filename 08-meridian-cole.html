@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Меридиан и Коул — юридическая практика</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#101820;
+    --navy2:#182432;
+    --gold:#b08d57;
+    --ivory:#f4f2ec;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:var(--ivory);color:var(--navy);font-family:'Inter',sans-serif;}
+  .serif{font-family:'Libre Baskerville',serif;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 40px;}
+
+  header{
+    background:var(--navy);color:var(--ivory);
+    display:flex;justify-content:space-between;align-items:center;
+    padding:24px 40px;
+  }
+  .logo{font-family:'Libre Baskerville',serif;font-size:19px;letter-spacing:.01em;}
+  .logo b{color:var(--gold);}
+  nav{display:flex;gap:32px;font-size:13px;letter-spacing:.03em;color:rgba(244,242,236,.75);}
+
+  .hero{
+    background:var(--navy);color:var(--ivory);padding:90px 40px 110px;
+    border-bottom:3px solid var(--gold);
+  }
+  .hero-inner{max-width:1120px;margin:0 auto;text-align:center;}
+  .hero .eyebrow{font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);margin-bottom:26px;}
+  h1{font-family:'Libre Baskerville',serif;font-weight:400;font-size:clamp(32px,4.6vw,54px);line-height:1.3;max-width:760px;margin:0 auto;}
+  .hero p.lead{margin:28px auto 0;max-width:520px;font-size:15px;line-height:1.8;color:rgba(244,242,236,.65);}
+  .hero-cta{margin-top:38px;}
+  .btn-gold{background:var(--gold);color:var(--navy);padding:14px 30px;font-size:14px;font-weight:500;border-radius:2px;}
+
+  section{padding:90px 0;}
+  .section-label{
+    font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;
+  }
+  .section-title{font-family:'Libre Baskerville',serif;font-size:32px;margin-bottom:50px;}
+
+  .practice-list{display:flex;flex-direction:column;}
+  .clause{
+    display:grid;grid-template-columns:80px 1fr;gap:30px;
+    padding:36px 0;border-top:1px solid rgba(16,24,32,.14);
+  }
+  .clause:last-child{border-bottom:1px solid rgba(16,24,32,.14);}
+  .clause .c-num{font-family:'Libre Baskerville',serif;font-style:italic;color:var(--gold);font-size:22px;}
+  .clause h3{font-family:'Libre Baskerville',serif;font-size:19px;margin-bottom:10px;}
+  .clause p{font-size:14px;line-height:1.75;color:#4a5560;max-width:640px;}
+
+  .principles-strip{
+    background:var(--navy2);color:var(--ivory);padding:80px 40px;
+  }
+  .p-grid{max-width:1120px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:50px;text-align:center;}
+  .p-grid div b{display:block;font-family:'Libre Baskerville',serif;font-size:38px;color:var(--gold);margin-bottom:10px;}
+  .p-grid div span{font-size:13px;color:rgba(244,242,236,.6);}
+
+  footer{padding:56px 40px;background:var(--navy);color:rgba(244,242,236,.6);display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;font-size:13px;}
+
+  @media(max-width:820px){
+    .clause{grid-template-columns:1fr;gap:10px;}
+    .p-grid{grid-template-columns:1fr;gap:30px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">MERIDIAN <b>&</b> COLE</div>
+  <nav>
+    <a href="#practice">Практики</a>
+    <a href="#numbers">Показатели</a>
+    <a href="#contact">Контакты</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <span class="eyebrow">Юридическая практика · с 1998 года</span>
+    <h1>Корпоративное право требует терпения, а не красноречия</h1>
+    <p class="lead">Мы сопровождаем сделки, споры и реструктуризации для среднего и крупного бизнеса — без публичности и с полной ответственностью за результат.</p>
+    <div class="hero-cta"><a class="btn-gold" href="#contact">Записаться на консультацию</a></div>
+  </div>
+</section>
+
+<section id="practice">
+  <div class="wrap">
+    <div class="section-label">Практики</div>
+    <h2 class="section-title">Четыре направления</h2>
+    <div class="practice-list">
+      <div class="clause">
+        <div class="c-num">I.</div>
+        <div>
+          <h3>Корпоративное право и M&A</h3>
+          <p>Структурирование сделок, due diligence, сопровождение слияний и поглощений на всех этапах — от term sheet до закрытия.</p>
+        </div>
+      </div>
+      <div class="clause">
+        <div class="c-num">II.</div>
+        <div>
+          <h3>Разрешение споров</h3>
+          <p>Представление интересов в арбитраже и государственных судах, досудебное урегулирование, медиация между сторонами.</p>
+        </div>
+      </div>
+      <div class="clause">
+        <div class="c-num">III.</div>
+        <div>
+          <h3>Налоговое консультирование</h3>
+          <p>Структурирование холдингов, сопровождение проверок, защита позиции компании перед налоговыми органами.</p>
+        </div>
+      </div>
+      <div class="clause">
+        <div class="c-num">IV.</div>
+        <div>
+          <h3>Трудовое право</h3>
+          <p>Кадровый комплаенс, сопровождение сокращений, разрешение трудовых споров на стороне работодателя.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="principles-strip" id="numbers">
+  <div class="p-grid">
+    <div><b>27</b><span>лет практики</span></div>
+    <div><b>340+</b><span>закрытых сделок</span></div>
+    <div><b>96%</b><span>дел в пользу клиента</span></div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div>MERIDIAN & COLE · Москва, Пресненская наб., 10</div>
+  <div>office@meridiancole.example · +7 495 000-00-00</div>
+</footer>
+
+</body>
+</html>

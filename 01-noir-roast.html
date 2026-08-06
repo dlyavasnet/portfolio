@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NOIR — обжарочная мастерская</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1a1410;
+    --paper:#ede6d8;
+    --copper:#b8763e;
+    --copper-dim:#8a5a30;
+    --line: rgba(237,230,216,0.14);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--ink);
+    color:var(--paper);
+    font-family:'Inter',sans-serif;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  a{color:inherit;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 32px;}
+
+  header{
+    position:fixed;top:0;left:0;right:0;z-index:50;
+    display:flex;justify-content:space-between;align-items:center;
+    padding:26px 40px;
+    mix-blend-mode:difference;
+    font-size:13px;letter-spacing:.14em;text-transform:uppercase;
+  }
+  header nav{display:flex;gap:32px;}
+  header nav a{text-decoration:none;opacity:.8;transition:opacity .2s;}
+  header nav a:hover{opacity:1;}
+
+  .hero{
+    min-height:100vh;
+    display:flex;flex-direction:column;justify-content:center;
+    position:relative;
+    padding:120px 40px 80px;
+    border-bottom:1px solid var(--line);
+  }
+  .hero-grid{
+    max-width:1180px;margin:0 auto;width:100%;
+    display:grid;grid-template-columns:1.3fr 1fr;gap:60px;align-items:end;
+  }
+  .roast-curve{
+    position:absolute; top:0; right:0; height:100%; width:46%;
+    opacity:.9; pointer-events:none;
+  }
+  h1{
+    font-family:'Fraunces',serif;
+    font-weight:500;
+    font-size:clamp(48px,7vw,104px);
+    line-height:.96;
+    letter-spacing:-0.01em;
+  }
+  h1 em{font-style:italic;font-weight:300;color:var(--copper);}
+  .hero-meta{
+    font-size:14px;line-height:1.7;color:rgba(237,230,216,.62);
+    max-width:320px;
+  }
+  .hero-meta .label{
+    display:block;color:var(--copper);font-size:11px;letter-spacing:.16em;
+    text-transform:uppercase;margin-bottom:10px;
+  }
+  .scroll-tag{
+    position:absolute;bottom:40px;left:40px;
+    font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:rgba(237,230,216,.4);
+    writing-mode:vertical-rl;
+  }
+
+  section{padding:120px 0;border-bottom:1px solid var(--line);}
+  .eyebrow{
+    font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--copper);
+    margin-bottom:20px;display:block;
+  }
+  .lots{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);}
+  .lot{background:var(--ink);padding:44px 34px;}
+  .lot .origin{font-family:'Fraunces',serif;font-size:28px;font-weight:500;margin-bottom:14px;}
+  .lot .alt{font-size:12px;color:var(--copper);letter-spacing:.08em;margin-bottom:18px;text-transform:uppercase;}
+  .lot p{font-size:14px;line-height:1.7;color:rgba(237,230,216,.65);}
+  .lot .curve-num{font-size:12px;color:rgba(237,230,216,.35);margin-top:24px;font-variant-numeric:tabular-nums;}
+
+  .process{display:grid;grid-template-columns:.9fr 1.1fr;gap:80px;align-items:center;}
+  .process h2{font-family:'Fraunces',serif;font-weight:500;font-size:clamp(32px,4vw,52px);line-height:1.1;margin-bottom:24px;}
+  .process p{font-size:15px;line-height:1.8;color:rgba(237,230,216,.65);max-width:440px;}
+  .temp-graph{width:100%;height:auto;}
+
+  footer{padding:60px 0;display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:20px;}
+  footer .fmark{font-family:'Fraunces',serif;font-size:22px;}
+  footer .fmeta{font-size:12px;color:rgba(237,230,216,.5);line-height:1.8;}
+
+  @media(max-width:820px){
+    .hero-grid,.process,.lots{grid-template-columns:1fr;}
+    .lots{border-left:none;border-right:none;}
+    .roast-curve{display:none;}
+    .scroll-tag{display:none;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <span>NOIR</span>
+  <nav>
+    <a href="#lots">Лоты</a>
+    <a href="#process">Обжарка</a>
+    <a href="#visit">Адрес</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <svg class="roast-curve" viewBox="0 0 400 600" preserveAspectRatio="xMidYMid meet">
+    <path d="M 40 560 C 120 560, 160 480, 180 400 C 200 320, 190 260, 230 200 C 270 140, 340 110, 370 40" fill="none" stroke="#b8763e" stroke-width="1.2" opacity="0.7"/>
+    <circle cx="230" cy="200" r="3" fill="#b8763e"/>
+    <circle cx="370" cy="40" r="3" fill="#ede6d8"/>
+  </svg>
+  <div class="hero-grid">
+    <div>
+      <h1>Обжарка,<br>записанная<br>как <em>партитура</em></h1>
+    </div>
+    <div class="hero-meta">
+      <span class="label">Мастерская № 04</span>
+      Каждая партия зерна обжаривается по кривой, которую мы записываем вручную — с точностью до 3 секунд. Ничего лишнего, только температура и время.
+    </div>
+  </div>
+  <span class="scroll-tag">прокрутите ↓</span>
+</section>
+
+<section id="lots">
+  <div class="wrap">
+    <span class="eyebrow">Текущие лоты</span>
+    <div class="lots">
+      <div class="lot">
+        <div class="origin">Эфиопия</div>
+        <div class="alt">Иргачеффе · 1950 м</div>
+        <p>Светлая обжарка, 9.5 минут. Жасмин, бергамот, чёрный чай.</p>
+        <div class="curve-num">Кривая №118 — first crack 8:42</div>
+      </div>
+      <div class="lot">
+        <div class="origin">Колумбия</div>
+        <div class="alt">Уила · 1700 м</div>
+        <p>Средняя обжарка, 11 минут. Красное яблоко, тростниковый сахар.</p>
+        <div class="curve-num">Кривая №092 — first crack 9:10</div>
+      </div>
+      <div class="lot">
+        <div class="origin">Гватемала</div>
+        <div class="alt">Уэуэтенанго · 1600 м</div>
+        <p>Тёмная обжарка, 12.5 минут. Тёмный шоколад, орех пекан.</p>
+        <div class="curve-num">Кривая №145 — first crack 9:55</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="process">
+  <div class="wrap process">
+    <div>
+      <span class="eyebrow">Метод</span>
+      <h2>Мы не жарим на глаз.</h2>
+      <p>За барабаном стоит человек с журналом и секундомером. Каждая минута обжарки — точка на графике: температура зерна, температура воздуха, звук первого треска. Через год у нас накопилось 400 таких кривых — по сути, нотная тетрадь мастерской.</p>
+    </div>
+    <svg class="temp-graph" viewBox="0 0 560 280" xmlns="http://www.w3.org/2000/svg">
+      <line x1="0" y1="240" x2="560" y2="240" stroke="rgba(237,230,216,0.14)"/>
+      <line x1="0" y1="160" x2="560" y2="160" stroke="rgba(237,230,216,0.14)"/>
+      <line x1="0" y1="80" x2="560" y2="80" stroke="rgba(237,230,216,0.14)"/>
+      <path d="M 0 240 C 80 230, 140 190, 200 150 C 260 110, 300 90, 360 60 C 420 34, 480 20, 560 8" fill="none" stroke="#b8763e" stroke-width="2"/>
+      <circle cx="360" cy="60" r="4" fill="#b8763e"/>
+      <text x="368" y="55" fill="#ede6d8" font-size="11" font-family="Inter" opacity="0.6">first crack</text>
+    </svg>
+  </div>
+</section>
+
+<footer id="visit">
+  <div class="wrap" style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:20px;width:100%;">
+    <div class="fmark">NOIR</div>
+    <div class="fmeta">
+      ул. Обжарочная, 6 · открыто вт–вс, 8:00–18:00<br>
+      hello@noir-roast.example
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

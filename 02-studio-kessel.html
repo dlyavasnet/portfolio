@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KESSEL — архитектурное бюро</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700&family=Archivo+Expanded:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f3f2ee;
+    --ink:#171716;
+    --steel:#5b6b6a;
+    --line:#c9c7bf;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    background:var(--bg);color:var(--ink);
+    font-family:'Archivo',sans-serif;
+    font-size:16px;
+  }
+  .wrap{max-width:1320px;margin:0 auto;padding:0 40px;}
+  a{color:inherit;text-decoration:none;}
+
+  header{
+    display:flex;justify-content:space-between;align-items:center;
+    padding:28px 40px;border-bottom:1px solid var(--line);
+    position:sticky;top:0;background:var(--bg);z-index:10;
+  }
+  .logo{font-family:'Archivo Expanded',sans-serif;font-weight:500;font-size:15px;letter-spacing:.02em;}
+  nav{display:flex;gap:36px;font-size:13px;text-transform:uppercase;letter-spacing:.08em;}
+
+  .hero{
+    display:grid;grid-template-columns:60px 1fr 1fr;
+    border-bottom:1px solid var(--line);
+  }
+  .hero .index{
+    border-right:1px solid var(--line);
+    writing-mode:vertical-rl;
+    display:flex;align-items:flex-end;justify-content:center;
+    padding:24px 0;font-size:12px;letter-spacing:.15em;color:var(--steel);
+  }
+  .hero .headline{
+    padding:80px 48px 80px 40px;border-right:1px solid var(--line);
+  }
+  .hero .headline h1{
+    font-weight:700;font-size:clamp(38px,5vw,66px);line-height:1.02;letter-spacing:-0.01em;
+  }
+  .hero .side{
+    padding:80px 40px;display:flex;flex-direction:column;justify-content:space-between;
+  }
+  .hero .side p{font-size:15px;line-height:1.75;color:#3f3f3d;max-width:380px;}
+  .stat-row{display:flex;gap:40px;margin-top:60px;}
+  .stat b{display:block;font-size:32px;font-weight:700;}
+  .stat span{font-size:12px;color:var(--steel);text-transform:uppercase;letter-spacing:.06em;}
+
+  .projects{border-bottom:1px solid var(--line);}
+  .proj-row{
+    display:grid;grid-template-columns:60px 200px 1fr 160px;
+    border-top:1px solid var(--line);
+    align-items:center;
+    transition:background .2s;
+    cursor:pointer;
+  }
+  .proj-row:hover{background:#e9e7df;}
+  .proj-row > div{padding:30px 24px;border-right:1px solid var(--line);}
+  .proj-row > div:last-child{border-right:none;}
+  .proj-num{font-size:13px;color:var(--steel);}
+  .proj-name{font-weight:600;font-size:20px;}
+  .proj-desc{font-size:14px;color:#57564f;}
+  .proj-year{font-size:13px;color:var(--steel);text-align:right;}
+
+  .section-title{
+    padding:60px 40px 30px;border-bottom:1px solid var(--line);
+    display:flex;justify-content:space-between;align-items:baseline;
+  }
+  .section-title h2{font-size:14px;text-transform:uppercase;letter-spacing:.1em;color:var(--steel);}
+  .section-title span{font-size:13px;color:var(--steel);}
+
+  .principles{
+    display:grid;grid-template-columns:repeat(3,1fr);border-bottom:1px solid var(--line);
+  }
+  .principle{padding:50px 40px;border-right:1px solid var(--line);}
+  .principle:last-child{border-right:none;}
+  .principle .p-num{font-size:12px;color:var(--steel);margin-bottom:16px;}
+  .principle h3{font-size:19px;font-weight:600;margin-bottom:12px;}
+  .principle p{font-size:14px;line-height:1.7;color:#57564f;}
+
+  footer{padding:50px 40px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;font-size:13px;color:var(--steel);}
+
+  @media(max-width:900px){
+    .hero{grid-template-columns:1fr;}
+    .hero .index{display:none;}
+    .hero .headline,.hero .side{border-right:none;border-bottom:1px solid var(--line);}
+    .proj-row{grid-template-columns:1fr;}
+    .proj-row>div{border-right:none;border-bottom:1px solid var(--line);}
+    .principles{grid-template-columns:1fr;}
+    .principle{border-right:none;border-bottom:1px solid var(--line);}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">KESSEL ATELIER</div>
+  <nav>
+    <a href="#work">Проекты</a>
+    <a href="#principles">Подход</a>
+    <a href="#contact">Контакты</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="index">ОСНОВАНО В 2014</div>
+  <div class="headline">
+    <h1>Мы проектируем вес, а не только форму.</h1>
+  </div>
+  <div class="side">
+    <p>Архитектурное бюро полного цикла: от планировки участка до авторского надзора на стройке. Работаем с бетоном, деревом и светом — в таком порядке важности.</p>
+    <div class="stat-row">
+      <div class="stat"><b>37</b><span>объектов сдано</span></div>
+      <div class="stat"><b>11</b><span>лет практики</span></div>
+      <div class="stat"><b>4</b><span>страны</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="section-title" id="work">
+  <h2>Избранные проекты</h2>
+  <span>2019 — 2026</span>
+</div>
+<section class="projects">
+  <div class="proj-row">
+    <div class="proj-num">01</div>
+    <div class="proj-name">Дом на склоне</div>
+    <div class="proj-desc">Частный дом, встроенный в рельеф — крыша как продолжение холма</div>
+    <div class="proj-year">2026</div>
+  </div>
+  <div class="proj-row">
+    <div class="proj-num">02</div>
+    <div class="proj-name">Библиотека Норд</div>
+    <div class="proj-desc">Общественное здание, естественное освещение без единого прожектора днём</div>
+    <div class="proj-year">2024</div>
+  </div>
+  <div class="proj-row">
+    <div class="proj-num">03</div>
+    <div class="proj-name">Терминал 3</div>
+    <div class="proj-desc">Реконструкция вокзального павильона, сохранена историческая ферма кровли</div>
+    <div class="proj-year">2022</div>
+  </div>
+  <div class="proj-row">
+    <div class="proj-num">04</div>
+    <div class="proj-name">Мастерская К.</div>
+    <div class="proj-desc">Студия для скульптора — один объём, один свет, один материал</div>
+    <div class="proj-year">2020</div>
+  </div>
+</section>
+
+<div class="section-title" id="principles">
+  <h2>Три принципа</h2>
+  <span>Не меняются с 2014</span>
+</div>
+<section class="principles">
+  <div class="principle">
+    <div class="p-num">— Вес</div>
+    <h3>Здание должно выглядеть так, будто стоит там давно</h3>
+    <p>Мы избегаем консольных эффектных решений ради эффекта. Материал должен читаться честно: что несёт нагрузку, то и выглядит несущим.</p>
+  </div>
+  <div class="principle">
+    <div class="p-num">— Свет</div>
+    <h3>Один источник дневного света на помещение</h3>
+    <p>Множественные окна размывают тень. Мы проектируем один главный проём — и работаем с тем, что он делает с пространством в течение дня.</p>
+  </div>
+  <div class="principle">
+    <div class="p-num">— Тишина</div>
+    <h3>Фасад не обязан ничего рассказывать</h3>
+    <p>Мы не украшаем плоскости. Пусть здание молчит снаружи и говорит внутри — через пропорции комнат, а не через декор.</p>
+  </div>
+</section>
+
+<footer id="contact">
+  <div>KESSEL ATELIER · наб. Инженерная, 14</div>
+  <div>studio@kessel-atelier.example · +7 900 000-00-00</div>
+</footer>
+
+</body>
+</html>
